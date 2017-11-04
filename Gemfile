@@ -4,6 +4,7 @@ gem 'adequate_exposure'
 gem 'authem'
 gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'coffee-rails', '~> 4.1.0'
+gem "filestack-rails"
 gem 'haml-rails'
 gem 'google-webfonts-rails'
 gem 'jbuilder', '~> 2.0'

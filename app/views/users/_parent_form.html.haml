@@ -37,4 +37,7 @@
         = f.password_field :password_confirmation, class: "form-control", placeholder: "Passord Confirmation"
 
   %br
+  = f.filestack_field :filepicker_url, 'Upload Your Avatar!'
+
+  %br
   = f.submit "Sign up", class: "btn btn-success"

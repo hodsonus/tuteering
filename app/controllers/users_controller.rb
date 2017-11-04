@@ -43,6 +43,7 @@ class UsersController < ApplicationController
       :grade,
       :parent_id,
       :zipcode,
+      :filepicker_url,
       languages: []
     )
   end

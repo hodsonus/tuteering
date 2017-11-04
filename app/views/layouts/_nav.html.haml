@@ -1,27 +1,17 @@
 .container
   %header.masthead
-    %h3.text-muted Project name
+    %h3.text-muted Tuteering
     %nav.navbar.navbar-expand-md.navbar-light.bg-light.rounded.mb-3
       %button.navbar-toggler{"aria-controls" => "navbarCollapse", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarCollapse", "data-toggle" => "collapse", :type => "button"}
         %span.navbar-toggler-icon
       #navbarCollapse.collapse.navbar-collapse
         %ul.navbar-nav.text-md-center.nav-justified.w-100
           %li.nav-item.active
-            %a.nav-link{:href => "#"}
-              Home
-              %span.sr-only (current)
+            = link_to "Home", dashboard_path, class: "nav-link"
+            %span.sr-only (current)
           %li.nav-item
             = link_to "Find a Tutor", tutors_path, class: "nav-link"
           %li.nav-item
-            %a.nav-link{:href => "#"} Services
+            %a.nav-link{:href => "#"} Testimonials
           %li.nav-item
-            %a.nav-link{:href => "#"} Downloads
-          %li.nav-item
-            %a.nav-link{:href => "#"} About
-          %li.nav-item.dropdown
-            %a#dropdown01.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "http://example.com"} Dropdown
-            .dropdown-menu{"aria-labelledby" => "dropdown01"}
-              %a.dropdown-item{:href => "#"} Action
-              %a.dropdown-item{:href => "#"} Another action
-              %a.dropdown-item{:href => "#"} Something else here
-  %main{:role => "main"}
+            = link_to "Sign Out", sign_out_path, method: :delete, class: "nav-link"

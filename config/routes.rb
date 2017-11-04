@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get "/dashboard", to: "pages#dashboard"
   get "/sign_in", to: "pages#sign_in"
   get "/sign_up", to: "pages#sign_up"
+  get "/sign_up", to: "pages#sign_up"
+  delete '/sign_out', to: 'sessions#destroy'
 end
