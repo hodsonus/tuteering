@@ -1,0 +1,31 @@
+= form_for user do |f|
+  = f.hidden_field :kind, value: "Parent"
+
+  = f.label :first_name
+  = f.text_field :first_name
+
+  = f.label :last_name
+  = f.text_field :last_name
+
+  = f.label :email
+  = f.text_field :email
+
+  = f.label :bio
+  = f.text_area :bio
+
+  = f.label :age
+  = f.number_field :age
+
+  = f.label :zip_code
+  = f.text_field :zipcode
+
+  = f.label :first_name
+  = f.text_field :first_name
+
+  = f.label :password
+  = f.password_field :password
+
+  = f.label :password_confirmation
+  = f.password_field :password_confirmation
+
+  = f.submit "Sign up"
