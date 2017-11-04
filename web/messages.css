@@ -53,12 +53,12 @@ p, div {
 .table-filter tbody tr.selected td {
 	background-color: #eee;
 }
-/*.table-filter tr td:first-child {
+.table-filter tr td:first-child {
 	width: 38px;
 }
 .table-filter tr td:nth-child(2) {
 	width: 35px;
-}*/
+}
 .ckbox {
 	position: relative;
 }
