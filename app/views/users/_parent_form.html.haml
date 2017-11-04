@@ -1,31 +1,40 @@
 = form_for user do |f|
   = f.hidden_field :kind, value: "Parent"
 
-  = f.label :first_name
-  = f.text_field :first_name
 
-  = f.label :last_name
-  = f.text_field :last_name
+  %br
+  .form-inputs
+    .row
+      .col-md-6
+        = f.text_field :first_name, placeholder: "First Name", class: "form-control"
+      .col-md-6
+        = f.text_field :last_name, placeholder: "Last Name", class: "form-control"
 
-  = f.label :email
-  = f.text_field :email
+  %br
+  .form-inputs
+    .row
+      .col-md-12
+        = f.text_field :email, placeholder: "Email", class: "form-control"
+  %br
+  = f.text_area :bio, class: "form-control", placeholder: "Bio"
+  %br
 
-  = f.label :bio
-  = f.text_area :bio
+  .form-inputs
+    .row
+      .col-md-6
+        = f.label :age
+        = f.number_field :age, class: "form-control"
+      .col-md-6
+        = f.label :zip_code
+        = f.number_field :zipcode, class: "form-control", placeholder: "11223"
 
-  = f.label :age
-  = f.number_field :age
+  %br
+  .form-inputs
+    .row
+      .col-md-6
+        = f.password_field :password, class: "form-control", placeholder: "Password"
+      .col-md-6
+        = f.password_field :password_confirmation, class: "form-control", placeholder: "Passord Confirmation"
 
-  = f.label :zip_code
-  = f.text_field :zipcode
-
-  = f.label :first_name
-  = f.text_field :first_name
-
-  = f.label :password
-  = f.password_field :password
-
-  = f.label :password_confirmation
-  = f.password_field :password_confirmation
-
-  = f.submit "Sign up"
+  %br
+  = f.submit "Sign up", class: "btn btn-success"

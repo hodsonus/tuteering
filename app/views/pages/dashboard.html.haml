@@ -1,1 +1,67 @@
-%h1 Dashboard
+.container
+  %header.masthead
+    %h3.text-muted Project name
+    %nav.navbar.navbar-expand-md.navbar-light.bg-light.rounded.mb-3
+      %button.navbar-toggler{"aria-controls" => "navbarCollapse", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarCollapse", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarCollapse.collapse.navbar-collapse
+        %ul.navbar-nav.text-md-center.nav-justified.w-100
+          %li.nav-item.active
+            %a.nav-link{:href => "#"}
+              Home
+              %span.sr-only (current)
+          %li.nav-item
+            %a.nav-link{:href => "#"} Projects
+          %li.nav-item
+            %a.nav-link{:href => "#"} Services
+          %li.nav-item
+            %a.nav-link{:href => "#"} Downloads
+          %li.nav-item
+            %a.nav-link{:href => "#"} About
+          %li.nav-item.dropdown
+            %a#dropdown01.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "http://example.com"} Dropdown
+            .dropdown-menu{"aria-labelledby" => "dropdown01"}
+              %a.dropdown-item{:href => "#"} Action
+              %a.dropdown-item{:href => "#"} Another action
+              %a.dropdown-item{:href => "#"} Something else here
+  %main{:role => "main"}
+    / Jumbotron
+    .jumbotron
+      %h1 Marketing stuff!
+      %p.lead Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.
+      %p
+        %a.btn.btn-lg.btn-success{:href => "#", :role => "button"} Get started today
+    / Example row of columns
+    .row
+      .col-lg-4
+        %h2 Heading
+        %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+        %p
+          %a.btn.btn-primary{:href => "#", :role => "button"} View details »
+      .col-lg-4
+        %h2 Heading
+        %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+        %p
+          %a.btn.btn-primary{:href => "#", :role => "button"} View details »
+      .col-lg-4
+        %h2 Heading
+        %p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
+        %p
+          %a.btn.btn-primary{:href => "#", :role => "button"} View details »
+  / Site footer
+  %footer.footer
+    %p © Company 2017
+/ /container
+/
+  Bootstrap core JavaScript
+  \==================================================
+/ Placed at the end of the document so the pages load faster
+%script{:crossorigin => "anonymous", :integrity => "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", :src => "https://code.jquery.com/jquery-3.2.1.slim.min.js"}
+:javascript
+  window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')
+%script{:src => "../../../../assets/js/vendor/popper.min.js"}
+%script{:src => "../../../../dist/js/bootstrap.min.js"}
+%html
+%p
+\~
+

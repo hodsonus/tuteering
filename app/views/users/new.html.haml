@@ -1,5 +1,9 @@
-%h1 Sign up
-- if params[:type] == "tutor"
-  = render "tutor_form"
-- else
-  = render "parent_form"
+.sign_in
+  .panel.panel-success
+    .panel-heading
+      %h2 Sign up
+    .panel-body
+      - if params[:type] == "tutor"
+        = render "tutor_form"
+      - else
+        = render "parent_form"
