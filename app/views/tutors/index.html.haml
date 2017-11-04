@@ -25,7 +25,10 @@
             = filestack_image( tutor.filepicker_url)
           - else
             = image_tag "default.jpg", class: "tutor_image"
-          %p= tutor.full_name
+          %p= "#{tutor.full_name} (6/10)"
           %p= "Subject: #{tutor.subject}"
           %p= "Languages: English, Spanish"
           %p= tutor.email
+          = link_to "Leave review", new_review_path(tutor_id: tutor.id), class: "btn btn-warning btn-sm"
+          = link_to "Reviews", reviews_path(tutor_id: tutor.id), class: "btn btn-primary btn-sm"
+          = link_to "Message", reviews_path(tutor_id: tutor.id), class: "btn btn-success btn-sm"

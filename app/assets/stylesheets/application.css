@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require bootstrap.min
+ *= require trix
  */
 
 .sign_in{
@@ -115,7 +116,39 @@ body, html {
 }
 
 .tutor p{
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   text-align: left;
+}
+
+.tutor a{
+  float: right;
+  margin-left: 10px;
+}
+
+.reviews{
+  border: 1px solid #efefef;
+}
+
+.review{
+  padding: 15px;
+  border-bottom: 1px solid #efefef;
+}
+
+.reviews .image{
+  width: 200px;
+  margin: 0 auto;
+}
+
+.reviews img{
+  width: 100%;
+  text-align: center;
+}
+
+.review img{
+  width: 25px;
+}
+
+.review.average{
+  text-align: right;
 }

@@ -1,0 +1,18 @@
+.container
+  .panel.panel-success
+    .panel-heading
+      %h2= "Reviews for #{tutor.full_name}"
+  .reviews
+    - if tutor.filepicker_url.present?
+      .image= filestack_image tutor.filepicker_url
+    - else
+      .image= image_tag "default.jpg"
+    - tutor.reviews.each do |review|
+      .review
+        = image_tag "default.jpg"
+        = User.find(review.parent_id).first_name
+        = review.body.html_safe
+        = "Rating: #{review.rating}/10"
+    .review.average
+      %b Average rating:
+      = "#{tutor.average_rating}/10"
