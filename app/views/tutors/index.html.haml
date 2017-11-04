@@ -1,0 +1,24 @@
+.container
+  .panel.panel-success
+    .panel-heading
+      %h1 Find Tutors
+    .panel-body
+      = form_tag "/tutors", method: "get" do
+        .form-inputs
+          .row
+            .col-md-4
+              = label_tag "Same zip code?"
+              = check_box_tag "same_code"
+            .col-md-4
+              = label_tag "Subject"
+              = select_tag "Subject", options_for_select( subjects )
+            .col-md-4
+              = submit_tag "Search"
+
+  - if tutor_list.blank?
+    %h2 Sorry, no tutors match query
+  - else
+    - tutor_list.each do |tutor|
+      .class
+        = tutor.full_name
+        = tutor.email

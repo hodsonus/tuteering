@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
   authem_for :user
   expose :user
+
   expose :qualifications do
     [ "Highschool Diploma", "Pursuing Bachelors", "Pursuing Masters" ]
+  end
+
+  expose :subjects do
+    [ "Math", "Science", "Reading", "Spelling"]
   end
 
   def create
