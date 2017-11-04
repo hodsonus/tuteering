@@ -88,3 +88,34 @@ body, html {
     top: 0;
     bottom: 0;
 }
+
+.tutor_image{
+  width: 150px;
+  margin-left: 6vw;
+}
+
+.tutors{
+  margin: 0;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: left;
+}
+
+.tutor {
+  width: 33%;
+  border: 1px solid #efefef;
+  padding: 1em;
+}
+
+.tutor p{
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+}

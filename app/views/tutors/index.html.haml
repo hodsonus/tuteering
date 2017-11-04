@@ -11,14 +11,21 @@
               = check_box_tag "same_code"
             .col-md-4
               = label_tag "Subject"
-              = select_tag "Subject", options_for_select( subjects )
+              = select_tag "subject", options_for_select( subjects )
             .col-md-4
               = submit_tag "Search"
 
   - if tutor_list.blank?
     %h2 Sorry, no tutors match query
   - else
-    - tutor_list.each do |tutor|
-      .class
-        = tutor.full_name
-        = tutor.email
+    .tutors
+      - tutor_list.each do |tutor|
+        .tutor
+          - if tutor.filepicker_url.present?
+            = filestack_image( tutor.filepicker_url)
+          - else
+            = image_tag "default.jpg", class: "tutor_image"
+          %p= tutor.full_name
+          %p= "Subject: #{tutor.subject}"
+          %p= "Languages: English, Spanish"
+          %p= tutor.email

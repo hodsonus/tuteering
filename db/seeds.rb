@@ -30,9 +30,8 @@ puts "Creating tutors"
   zipcode = 11111
   kind = "Tutor"
   qualification = "Highschool Diploma"
-  password = password
 
-  User.create(
+  user = User.create(
     first_name: first_name,
     last_name: last_name,
     email: email,
@@ -40,9 +39,11 @@ puts "Creating tutors"
     subject: subject,
     zipcode: zipcode,
     kind: kind,
+    password: "password",
     qualifications: qualification,
-    password: password
+    password: "password",
   )
+
 end
 
 5.times do
@@ -55,7 +56,6 @@ end
   zipcode = 00000
   kind = "Tutor"
   qualification = "Pursuing Bachelors"
-  password = password
 
   User.create(
     first_name: first_name,
@@ -65,8 +65,9 @@ end
     subject: subject,
     zipcode: zipcode,
     kind: kind,
+    password: "password",
     qualifications: qualification,
-    password: password
+    password: "password"
   )
 end
 
@@ -91,7 +92,7 @@ end
     zipcode: zipcode,
     kind: kind,
     qualifications: qualification,
-    password: password
+    password: "password"
   )
 end
 
@@ -107,7 +108,6 @@ puts "Creating parents"
   zipcode = 22222
   kind = "Parent"
   qualification = "Pursuing Bachelors"
-  password = password
 
   User.create(
     first_name: first_name,
@@ -116,7 +116,7 @@ puts "Creating parents"
     bio: bio,
     zipcode: zipcode,
     kind: kind,
-    password: password
+    password: "password"
   )
 end
 
@@ -127,4 +127,13 @@ puts "Creating children"
   age =  rand(18..40)
   grade =  rand(6..18)
   parent_id = User.where(kind: "Parent").first.id
+
+  User.create(
+    first_name: first_name,
+    last_name: last_name,
+    age: age,
+    grade: grade,
+    password: "password",
+    parent_id: parent_id
+  )
 end
