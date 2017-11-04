@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Tuteering! - Messages</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="messages.css" rel="stylesheet">
+
+    <!-- fonts! -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <header class="masthead">
+        <h3 class="text-muted">Tuteering!</h3>
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav text-md-center nav-justified w-100">
+              <li class="nav-item active">
+                <a align="left" class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a align="left" class="nav-link" href="#">Find A Tutor</a>
+              </li>
+              <li class="nav-item">
+                <a align="left" class="nav-link" href="#">Messages<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a align="right" class="nav-link" href="#">Sign Out</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <main role="main">
+
+        <div class="jumbotron"> <!-- Jumbotron -->
+          <div class="container">
+          	<div class="row">
+          		<section class="content">
+          			<h1>Table Filter</h1>
+          			<div class="col-md-8 col-md-offset-2">
+          				<div class="panel panel-default">
+          					<div class="panel-body">
+          						<div class="pull-right">
+          							<div class="btn-group">
+          								<button type="button" class="btn btn-success btn-filter" data-target="pagado">Inbox</button>
+          								<button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Sent</button>
+          								<button type="button" class="btn btn-default btn-filter" data-target="all">All</button><!-- can delete if wanted, not entirely sure this is a great idae-->
+          							</div>
+          						</div>
+          						<div class="table-container">
+          							<table class="table table-filter">
+          								<tbody>
+          									<tr data-status="pagado">
+          										<td>
+          											<div class="ckbox">
+          												<input type="checkbox" id="checkbox1">
+          												<label for="checkbox1"></label>
+          											</div>
+          										</td>
+          										<td>
+          											<a href="javascript:;" class="star">
+          												<i class="glyphicon glyphicon-star"></i>
+          											</a>
+          										</td>
+          										<td>
+          											<div class="media">
+          												<a href="#" class="pull-left">
+          													<img src="img/profile.jpg" class="media-photo">
+          												</a>
+          												<div class="media-body">
+          													<span class="media-meta pull-right">Febrero 13, 2016</span>
+          													<h4 class="title">
+          														Lorem Impsum
+          														<span class="pull-right pagado">(Pagado)</span>
+          													</h4>
+          													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+          												</div>
+          											</div>
+          										</td>
+          									</tr>
+          									<tr data-status="pendiente">
+          										<td>
+          											<div class="ckbox">
+          												<input type="checkbox" id="checkbox3">
+          												<label for="checkbox3"></label>
+          											</div>
+          										</td>
+          										<td>
+          											<a href="javascript:;" class="star">
+          												<i class="glyphicon glyphicon-star"></i>
+          											</a>
+          										</td>
+          										<td>
+          											<div class="media">
+          												<a href="#" class="pull-left">
+          													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+          												</a>
+          												<div class="media-body">
+          													<span class="media-meta pull-right">Febrero 13, 2016</span>
+          													<h4 class="title">
+          														Lorem Impsum
+          														<span class="pull-right pendiente">(Pendiente)</span>
+          													</h4>
+          													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+          												</div>
+          											</div>
+          										</td>
+          									</tr>
+          									<tr data-status="cancelado">
+          										<td>
+          											<div class="ckbox">
+          												<input type="checkbox" id="checkbox2">
+          												<label for="checkbox2"></label>
+          											</div>
+          										</td>
+          										<td>
+          											<a href="javascript:;" class="star">
+          												<i class="glyphicon glyphicon-star"></i>
+          											</a>
+          										</td>
+          										<td>
+          											<div class="media">
+          												<a href="#" class="pull-left">
+          													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+          												</a>
+          												<div class="media-body">
+          													<span class="media-meta pull-right">Febrero 13, 2016</span>
+          													<h4 class="title">
+          														Lorem Impsum
+          														<span class="pull-right cancelado">(Cancelado)</span>
+          													</h4>
+          													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+          												</div>
+          											</div>
+          										</td>
+          									</tr>
+          									<tr data-status="pagado" class="selected">
+          										<td>
+          											<div class="ckbox">
+          												<input type="checkbox" id="checkbox4" checked>
+          												<label for="checkbox4"></label>
+          											</div>
+          										</td>
+          										<td>
+          											<a href="javascript:;" class="star star-checked">
+          												<i class="glyphicon glyphicon-star"></i>
+          											</a>
+          										</td>
+          										<td>
+          											<div class="media">
+          												<a href="#" class="pull-left">
+          													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+          												</a>
+          												<div class="media-body">
+          													<span class="media-meta pull-right">Febrero 13, 2016</span>
+          													<h4 class="title">
+          														Lorem Impsum
+          														<span class="pull-right pagado">(Pagado)</span>
+          													</h4>
+          													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+          												</div>
+          											</div>
+          										</td>
+          									</tr>
+          									<tr data-status="pendiente">
+          										<td>
+          											<div class="ckbox">
+          												<input type="checkbox" id="checkbox5">
+          												<label for="checkbox5"></label>
+          											</div>
+          										</td>
+          										<td>
+          											<a href="javascript:;" class="star">
+          												<i class="glyphicon glyphicon-star"></i>
+          											</a>
+          										</td>
+          										<td>
+          											<div class="media">
+          												<a href="#" class="pull-left">
+          													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+          												</a>
+          												<div class="media-body">
+          													<span class="media-meta pull-right">Febrero 13, 2016</span>
+          													<h4 class="title">
+          														Lorem Impsum
+          														<span class="pull-right pendiente">(Pendiente)</span>
+          													</h4>
+          													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+          												</div>
+          											</div>
+          										</td>
+          									</tr>
+          								</tbody>
+          							</table>
+          						</div>
+          					</div>
+          				</div>
+          				<div class="content-footer">
+          					<p>
+          						Page © - 2016 <br>
+          						Powered By <a href="https://www.facebook.com/tavo.qiqe.lucero" target="_blank">TavoQiqe</a>
+          					</p>
+          				</div>
+          			</div>
+          		</section>
+          	</div>
+          </div>
+        </div>  <!-- Jumbotron -->
+
+        <!-- Example row of columns -->
+        <!-- <div class="row">
+          <div class="col-lg-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          </div>
+        </div> -->
+
+      </main>
+
+      <!-- Site footer -->
+      <footer class="footer">
+        <p>&copy; Tuteering! 2017</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
