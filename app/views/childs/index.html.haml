@@ -1,0 +1,8 @@
+.container
+  - if current_user.users.present?
+    - current_user.users.each do |child|
+      = child.full_name
+  - else
+    %h4
+      Looks like you have no children signed up, add them!
+      = link_to "Add child", new_child_path, class: "btn btn-primary"

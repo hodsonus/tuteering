@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :reviews, foreign_key: :tutor_id
+  has_many :users, foreign_key: :parent_id
 
   include Authem::User
 
@@ -16,7 +17,11 @@ class User < ActiveRecord::Base
       n += 1
     end
 
-    return (sum/n)
+    if n != 0
+      return (sum/n)
+    else
+      return 0
+    end
 
   end
 end

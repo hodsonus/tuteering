@@ -3,11 +3,11 @@ class UsersController < ApplicationController
   expose :user
 
   expose :qualifications do
-    [ "Highschool Diploma", "Pursuing Bachelors", "Pursuing Masters" ]
+    [ ["Select level of education", ""], "Highschool Diploma", "Pursuing Bachelors", "Pursuing Masters" ]
   end
 
   expose :subjects do
-    [ "Math", "Science", "Reading", "Spelling"]
+    [ ["Select a subject", ""], "Math", "Science", "Reading", "Spelling"]
   end
 
   def create

@@ -1,0 +1,11 @@
+.container
+  .panel.panel-success
+    .panel-heading
+      %h4 Create child profile
+    .panel-body
+      = form_for new_child do |f|
+        .row
+          .col-md-6
+            = f.text_field :first_name, placeholder: "First name", class: "form-control"
+          .col-md-6
+            = f.text_field :last_name, placeholder: "Last name", class: "form-control"

@@ -17,7 +17,6 @@
  */
 
 .sign_in{
-   width: 80%;
    margin: 2em auto;
 }
 
@@ -151,4 +150,9 @@ body, html {
 
 .review.average{
   text-align: right;
+}
+
+.no-reviews{
+  margin-top: 1em;
+  text-align: center;
 }

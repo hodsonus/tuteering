@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :tutors
   resources :parents
   resources :reviews
+  resources :childs
 
   get "/dashboard", to: "pages#dashboard"
   get "/sign_in", to: "pages#sign_in"
