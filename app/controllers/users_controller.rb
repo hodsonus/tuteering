@@ -3,19 +3,24 @@ class UsersController < ApplicationController
   expose :user
 
   expose :qualifications do
-    [ "Highschool Diploma", "Pursuing Bachelors", "Pursuing Masters" ]
+    [ ["Select level of education", ""], "Highschool Diploma", "Pursuing Bachelors", "Pursuing Masters" ]
   end
 
   expose :subjects do
-    [ "Math", "Science", "Reading", "Spelling"]
+    [ ["Select a subject", ""], "Math", "Science", "Reading", "Spelling"]
   end
 
   def create
     user = User.new( user_params )
 
     if user.save
-      sign_in(user)
-      redirect_to dashboard_path
+      if current_user.present?
+        redirect_to child_path(user.id)
+      else
+        sign_in(user)
+        redirect_to dashboard_path
+      end
+
     else
       redirect_to new_user_path( type: "tutor" )
     end
@@ -44,6 +49,8 @@ class UsersController < ApplicationController
       :parent_id,
       :zipcode,
       :filepicker_url,
+      :comments,
+      :learning_style,
       languages: []
     )
   end

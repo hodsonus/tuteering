@@ -1,0 +1,9 @@
+.container
+  - if current_user.children.present?
+    - current_user.children.each do |child|
+      = link_to child.full_name, child_path(child.id)
+      = child.comments.html_safe
+  - else
+    %h4
+      Looks like you have no children signed up, add them!
+      = link_to "Add child", new_child_path, class: "btn btn-primary"

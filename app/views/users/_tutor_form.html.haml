@@ -4,24 +4,22 @@
   %br
   .form-inputs
     .row
-      .col-md-6
+      .col-md-4
         = f.text_field :first_name, placeholder: "First Name", class: "form-control"
-      .col-md-6
+      .col-md-4
         = f.text_field :last_name, placeholder: "Last Name", class: "form-control"
-
-  %br
-  .form-inputs
-    .row
-      .col-md-6
+      .col-md-4
         = f.text_field :email, placeholder: "Email", class: "form-control"
-    .row
-      .col-md-6
-        = f.label :subject
-        = f.select :subject, options_for_select( subjects ), class: "form-control"
-  %br
-  = f.text_area :bio, class: "form-control", placeholder: "Bio"
-  %br
 
+  %br
+  .row
+    .col-md-6
+      = f.label :subject
+      = f.select :subject, options_for_select( subjects ), {}, class: "form-control"
+    .col-md-6
+      = f.label :qualifications
+      = f.select :qualifications, options_for_select(qualifications), {}, class: "form-control"
+  %br
   .form-inputs
     .row
       .col-md-6
@@ -32,9 +30,7 @@
         = f.number_field :zipcode, class: "form-control", placeholder: "11223"
 
   %br
-    .col-md-6
-      = f.label :qualifications
-      = f.select :qualifications, options_for_select(qualifications, {class: "form-control form form-group"}), class: "form-control"
+  = f.trix_editor :bio, class: "form-control", placeholder: "Tell us about yourself."
 
   %br
   .form-inputs

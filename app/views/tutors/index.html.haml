@@ -5,20 +5,35 @@
     .panel-body
       = form_tag "/tutors", method: "get" do
         .form-inputs
+          %h4 Search
           .row
             .col-md-4
-              = label_tag "Same zip code?"
-              = check_box_tag "same_code"
+              = number_field_tag "zipcode", nil, min: 00000, max: 99999, class: "form-control", placeholder: "Search Zip Code"
             .col-md-4
-              = label_tag "Subject"
-              = select_tag "Subject", options_for_select( subjects )
+              = select_tag "subject", options_for_select( subjects ),  class: "form-control"
             .col-md-4
-              = submit_tag "Search"
+              = number_field_tag "rating", nil, min: 0, max: 10,  class: "form-control", placeholder: "Lowest rating in search"
+          %br
+          = submit_tag "Search", class: "btn btn-success"
+      %br
 
   - if tutor_list.blank?
     %h2 Sorry, no tutors match query
   - else
-    - tutor_list.each do |tutor|
-      .class
-        = tutor.full_name
-        = tutor.email
+    .tutors
+      - tutor_list.each do |tutor|
+        .tutor
+          - if tutor.filepicker_url.present?
+            = filestack_image( tutor.filepicker_url)
+          - else
+            = image_tag "default.jpg", class: "tutor_image"
+          %p
+            = tutor.full_name
+            = "(#{tutor.average_rating}/10)"
+          %p= "Subject: #{tutor.subject}"
+          %p= "Languages: English, Spanish"
+          %p= tutor.email
+          %p= "Zip code: #{tutor.zipcode}"
+          = link_to "Leave review", new_review_path(tutor_id: tutor.id), class: "btn btn-warning btn-sm"
+          = link_to "Reviews", reviews_path(tutor_id: tutor.id), class: "btn btn-primary btn-sm"
+          = link_to "Message", reviews_path(tutor_id: tutor.id), class: "btn btn-success btn-sm"
