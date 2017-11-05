@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   def all_messages(tutor_id)
     messages = Message.where(parent_id: id)
     results = []
-    messages = messages.order("created_at DESC")
+    messages = messages.order("created_at ASC")
 
     messages.each do |message|
       results << message if message.tutor_id == tutor_id
