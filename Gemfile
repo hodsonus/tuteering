@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'adequate_exposure'
 gem 'authem'
+gem "bootstrap-sass"
 gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'faker'

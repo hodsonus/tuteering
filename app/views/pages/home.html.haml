@@ -7,35 +7,42 @@
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
     %link{:href => "../../../../favicon.ico", :rel => "icon"}/
-    %title Justified Nav Template for Bootstrap
+    %title Cover Template for Bootstrap
     / Bootstrap core CSS
     %link{:href => "bootstrap/dist/css/bootstrap.min.css", :rel => "stylesheet"}/
     / Custom styles for this template
-    %link{:href => "start.css", :rel => "stylesheet"}/
-  %body
-    .container-fluid.h-100
-      .row.h-100
-        #left.col-sm-6.col-2.bg-dark.text-white.py-2.d-flex.align-items-center.justify-content-center
-          %h5.hidden-xs-down
-          %p
-            = link_to "Sign Up as Parent", new_user_path(type: "parent"), class: "btn btn-lg btn-success"
-            = link_to "Sign Up as Tutor", new_user_path(type: "tutor"), class: "btn btn-lg btn-success"
-            = link_to "Login", sign_in_path, class: "btn btn-lg btn-success"
-        .col-sm-6.invisible.col-2
-          / hidden spacer
-        .col.offset-2.offset-sm-6.py-2
-          %h4 I Scroll
-          %p
-            Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics,
-            raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick artisan cliche semiotics ugh synth chillwave meditation.
-            Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master cleanse hella DIY 90's blog.
-          %p
-            Ethical Kickstarter PBR asymmetrical lo-fi. oreamcatcher street art Carles, stumptown gluten-free Kickstarter artisan Wes Anderson wolf pug. Godard sustainable you probably haven't heard of them, vegan farm-to-table Williamsburg slow-carb
-            readymade disrupt deep v. Meggings seitan Wes Anderson semiotics, cliche American Apparel whatever. Helvetica cray plaid, vegan brunch Banksy leggings +1 direct trade. Wayfarers codeply PBR selfies. Banh mi McSweeney's Shoreditch selfies,
-            forage fingerstache food truck occupy YOLO Pitchfork fixie iPhone fanny pack art party Portland.
-          \--------------------
-          %p
-            Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics,
-            raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick artisan cliche semiotics ugh synth chillwave meditation.
-            Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master cleanse hella DIY 90's blog.
+    %link{:href => "landing.css", :rel => "stylesheet"}/
+  %body#home
+    .site-wrapper
+      .site-wrapper-inner
+        .cover-container
+          %header.masthead.clearfix
+            .inner
+              %h3.masthead-brand Tuteering!
+              %nav.nav.nav-masthead
+                %a.nav-link.active.home{"data-target" => "#myModal", "data-toggle" => "modal", :type => ""} Login
+
+          %main.inner.cover{:role => "main"}
+            = render "login_modal"
+            .center
+              = image_tag "whirlpool.png", width: 500, height: 200
+              %h1.cover-heading Volunteering + tutoring is a perfect match.
+              %p.lead A platform for caring and smart individuals willing give their time to tutor the students of tomorrow.
+              .links
+                %button.btn= link_to  "Register as Parent", new_user_path(type: "Parent")
+                %button.btn= link_to "Register as Tutor", new_user_path(type: "Tutor")
+              %p.lead
+          %footer.mastfoot
+            .inner
+              / <p>Ccr <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    /
+      Bootstrap core JavaScript
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    %script{:crossorigin => "anonymous", :integrity => "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", :src => "https://code.jquery.com/jquery-3.2.1.slim.min.js"}
+    :javascript
+      window.jQuery || document.write('<script src="bootstrap/assets/js/vendor/jquery.min.js"><\/script>')
+    %script{:src => "bootstrap/assets/js/vendor/popper.min.js"}
+    %script{:src => "bootstrap/dist/js/bootstrap.min.js"}
+    %script{:src => "login.js"}
 

@@ -14,14 +14,22 @@
  *= require_self
  *= require bootstrap.min
  *= require trix
+ *= require landing
+
  */
+
+.modal-content{
+  position: absolute;
+  left: -48vw;
+  top: 18vh;
+}
 
 .sign_in{
    margin: 2em auto;
 }
 
 body {
-  padding-top: 20px;
+  /* padding-top: 20px; */
 }
 
 .footer {
@@ -81,12 +89,6 @@ body, html {
 
 body, html {
     height: 100%;
-}
-
-#left {
-    position: fixed;
-    top: 0;
-    bottom: 0;
 }
 
 .tutor_image{
@@ -160,4 +162,27 @@ body, html {
 .from{
   text-align: right;
   color: #0084b4;
+}
+
+.inner{
+  color: #fff;
+}
+
+.inner .center{
+  text-align: center;
+}
+
+.inner.cover .btn{
+  color: orange;
+  background-color: #fff;
+  font-weight: bold;
+}
+
+.inner.cover a{
+  color: orange;
+}
+
+.active.home{
+  position: relative;
+  top: 1.2em;
 }

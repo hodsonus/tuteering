@@ -15,4 +15,5 @@
 //= require_tree .
 //= require bootstrap.min
 //= require trix
-
+//= require pages
+//= require bootstrap
