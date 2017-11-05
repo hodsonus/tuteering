@@ -11,9 +11,32 @@
             %h2 Activity
             .activity
               %h3 Tutoring
-              %p.detail Jimmmy has a tutoring date with Walter White coming up.
-              %p.detail Sarah has a new match with Barukh.
-              %p.detail Sammy has a new match with .
+              %p.detail
+                Jimmmy has a tutoring date with Walter White coming up.
+                = link_to "View event"
+              %p.detail
+                Kason has a tutoring date with Mr. Crocker coming up.
+                = link_to "View event"
+              %p.detail
+                Sammy has a tutoring date with Mrs. Puff coming up.
+                = link_to "View event"
+
+              %h3 New Messages
+              %p.detail
+                Walter White sent you a
+                = link_to "message"
+              %p.detail
+                Mr. Crocker sent you a
+                = link_to "message"
+              %p.detail
+                Mrs. Puff sent you a
+                = link_to "message"
+              %h3 Misc
+              %p.detail
+                A new
+                = link_to "tutor"
+                has been added
+
             %P
           .col-lg-6
             %p
