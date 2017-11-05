@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :parents
   resources :reviews
   resources :childs
+  resources :messages
 
   get "/dashboard", to: "pages#dashboard"
   get "/sign_in", to: "pages#sign_in"

@@ -143,3 +143,61 @@ puts "Creating children"
   )
 
 end
+
+puts "Creating messages"
+5.times do
+  body = Faker::Lorem.paragraph
+  tutor_id = User.where(kind: "Tutor").first.id
+  parent_id = User.where(kind: "Parent").first.id
+  from_id = tutor_id
+
+  Message.create(
+    body: "<div> #{body} </div>",
+    tutor_id: tutor_id,
+    parent_id: parent_id,
+    from_id: from_id
+  )
+end
+
+puts "Creating messages"
+5.times do
+  body = Faker::Lorem.paragraph
+  tutor_id = User.where(kind: "Tutor").first.id
+  parent_id = User.where(kind: "Parent").first.id
+  from_id = parent_id
+
+  Message.create(
+    body: "<div> #{body} </div>",
+    tutor_id: tutor_id,
+    parent_id: parent_id,
+    from_id: from_id
+  )
+end
+
+5.times do
+  body = Faker::Lorem.paragraph
+  tutor_id = User.where(kind: "Tutor").second.id
+  parent_id = User.where(kind: "Parent").first.id
+  from_id = tutor_id
+
+  Message.create(
+    body: "<div> #{body} </div>",
+    tutor_id: tutor_id,
+    parent_id: parent_id,
+    from_id: from_id
+  )
+end
+
+5.times do
+  body = Faker::Lorem.paragraph
+  tutor_id = User.where(kind: "Tutor").second.id
+  parent_id = User.where(kind: "Parent").first.id
+  from_id = parent_id
+
+  Message.create(
+    body: "<div> #{body} </div>",
+    tutor_id: tutor_id,
+    parent_id: parent_id,
+    from_id: from_id
+  )
+end

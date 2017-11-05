@@ -1,0 +1,10 @@
+.container
+  .panel.panel-success
+    .panel-heading
+      %h4= "Messages with #{tutor.full_name}"
+    .panel-body
+      .messages
+        - current_user.all_messages(tutor.id).each do |message|
+          .body= message.body.html_safe
+          .from= User.find(message.from_id).full_name
+        = render "form"

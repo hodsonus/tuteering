@@ -1,0 +1,7 @@
+.container
+  .panel.panel-success
+    .panel-heading Messages
+  .panel-body
+    - current_user.parent_messages.each do |message|
+      = message.body.html_safe
+      = User.find(message.tutor_id).full_name

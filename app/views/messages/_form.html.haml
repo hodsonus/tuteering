@@ -1,0 +1,7 @@
+= form_for new_message do |f|
+  = f.hidden_field :tutor_id, value: tutor.id
+  = f.hidden_field :from_id, value: current_user.id
+  = f.hidden_field :parent_id, value: current_user.id
+  = f.trix_editor :body, placeholder: "Hello #{tutor.full_name}..."
+  %br
+  = f.submit "Message", class: "btn btn-success"
