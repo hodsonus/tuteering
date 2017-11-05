@@ -1,0 +1,10 @@
+.container
+  %h1= child_profile.full_name
+  %p= child_profile.email
+  %p
+    %b Learning Style:
+    = child_profile.learning_style
+  %p
+    %p
+      %b Comments:
+    = child_profile.comments.try(&:html_safe)

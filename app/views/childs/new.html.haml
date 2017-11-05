@@ -4,8 +4,33 @@
       %h4 Create child profile
     .panel-body
       = form_for new_child do |f|
+        = f.hidden_field :parent_id, value: current_user.id
+        .row
+          .col-md-4
+            = f.text_field :first_name, placeholder: "First name", class: "form-control"
+          .col-md-4
+            = f.text_field :last_name, placeholder: "Last name", class: "form-control"
+          .col-md-4
+            = f.select :learning_style, options_for_select( learning_styles ), {}, class: "form-control"
+
+        %br
+        .row
+          .col-md-12
+            = f.text_field :email, placeholder: "email@example.com", class: "form-control"
+
+        %br
         .row
           .col-md-6
-            = f.text_field :first_name, placeholder: "First name", class: "form-control"
+            = f.password_field :password, placeholder: "Password", class: "form-control"
           .col-md-6
-            = f.text_field :last_name, placeholder: "Last name", class: "form-control"
+            = f.password_field :password_confirmation, placeholder: "Password Confirmation", class: "form-control"
+
+        %br
+        .row
+          .col-md-12
+            = f.trix_editor :comments, placeholder: "Comments on child's behavior"
+
+        %br
+        .row
+          .col-md-12
+            = f.submit "Save", class: "btn btn-success"

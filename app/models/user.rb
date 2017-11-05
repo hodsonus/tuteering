@@ -1,11 +1,16 @@
 class User < ActiveRecord::Base
   has_many :reviews, foreign_key: :tutor_id
-  has_many :users, foreign_key: :parent_id
 
   include Authem::User
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def children
+    User.all.each_with_object([]) do |user, children|
+      children << user if user.parent_id == id
+    end
   end
 
   def average_rating

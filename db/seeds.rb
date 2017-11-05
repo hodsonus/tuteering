@@ -127,13 +127,19 @@ puts "Creating children"
   age =  rand(18..40)
   grade =  rand(6..18)
   parent_id = User.where(kind: "Parent").first.id
+  email = Faker::Internet.email
+  paragraph = Faker::Lorem.paragraph
 
-  User.create(
+  user = User.create(
     first_name: first_name,
     last_name: last_name,
     age: age,
     grade: grade,
     password: "password",
-    parent_id: parent_id
+    parent_id: parent_id,
+    kind: "Child",
+    email: email,
+    comments: "<div> #{paragraph} </div>"
   )
+
 end
