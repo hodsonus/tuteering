@@ -10,15 +10,15 @@ a:hover {
 }
 
 /* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
+.btn-warning,
+.btn-warning:hover,
+.btn-warning:focus {
+  color: orange;
+  font-weight: bold;
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: #fff;
   border: .05rem solid #fff;
 }
-
 
 /*
  * Base structure
