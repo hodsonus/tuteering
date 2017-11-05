@@ -1,7 +1,19 @@
 .container
-  .panel.panel-success
-    .panel-heading Messages
+  .panel.panel-warning
+    .panel-heading
+      %h4 Messages
   .panel-body
-    - current_user.parent_messages.each do |message|
-      = message.body.html_safe
-      = User.find(message.tutor_id).full_name
+    .tutors
+      - current_user.messages_from.each do |tutor|
+        .tutor
+          - if tutor.filepicker_url.present?
+            = filestack_image( tutor.filepicker_url)
+          - else
+            = image_tag "default.jpg", class: "tutor_image"
+          %p
+            = link_to tutor.full_name, message_path(current_user.id, tutor_id: tutor.id)
+            = "(#{tutor.average_rating}/10)"
+          %p= "Subject: #{tutor.subject}"
+          %p= "Languages: English, Spanish"
+          %p= tutor.email
+          %p= "Zip code: #{tutor.zipcode}"

@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       sign_in(user)
       redirect_to dashboard_path
     else
-      render :new
+      redirect_to root_path
     end
   end
 

@@ -1,22 +1,11 @@
 !!!
 %html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
-    %link{:href => "../../../../favicon.ico", :rel => "icon"}/
-    %title Cover Template for Bootstrap
-    / Bootstrap core CSS
-    %link{:href => "bootstrap/dist/css/bootstrap.min.css", :rel => "stylesheet"}/
-    / Custom styles for this template
-    %link{:href => "landing.css", :rel => "stylesheet"}/
+  %title Cover Template for Bootstrap
   %body#home
     .site-wrapper
       .site-wrapper-inner
         .cover-container
-          %header.masthead.clearfix
+          %header.masthead.clearfix.home-mast
             .inner
               %h3.masthead-brand Tuteering!
               %nav.nav.nav-masthead
@@ -25,24 +14,18 @@
           %main.inner.cover{:role => "main"}
             = render "login_modal"
             .center
-              = image_tag "whirlpool.png", width: 500, height: 200
-              %h1.cover-heading Volunteering + tutoring is a perfect match.
-              %p.lead A platform for caring and smart individuals willing give their time to tutor the students of tomorrow.
+              = image_tag "whirlpool.png"
+              %h2.cover-heading
+                Volunteering
+                %i.fa.fa-users
+                + tutoring
+                %i.fa.fa-graduation-cap
+                is a perfect match
+                %i.glyphicon.glyphicon-heart
+              %p.lead A platform for a community of caring samaritans giving their time to tutor the students of tomorrow.
               .links
                 %button.btn= link_to  "Register as Parent", new_user_path(type: "Parent")
                 %button.btn= link_to "Register as Tutor", new_user_path(type: "Tutor")
               %p.lead
           %footer.mastfoot
             .inner
-              / <p>Ccr <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-    /
-      Bootstrap core JavaScript
-      \==================================================
-    / Placed at the end of the document so the pages load faster
-    %script{:crossorigin => "anonymous", :integrity => "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", :src => "https://code.jquery.com/jquery-3.2.1.slim.min.js"}
-    :javascript
-      window.jQuery || document.write('<script src="bootstrap/assets/js/vendor/jquery.min.js"><\/script>')
-    %script{:src => "bootstrap/assets/js/vendor/popper.min.js"}
-    %script{:src => "bootstrap/dist/js/bootstrap.min.js"}
-    %script{:src => "login.js"}
-

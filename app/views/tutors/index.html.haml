@@ -1,18 +1,20 @@
 .container
   .panel.panel-success
     .panel-heading
-      %h1 Find Tutors
+      %h4 Find Tutors
     .panel-body
       = form_tag "/tutors", method: "get" do
         .form-inputs
           %h4 Search
           .row
-            .col-md-4
+            .col-md-3
               = number_field_tag "zipcode", nil, min: 00000, max: 99999, class: "form-control", placeholder: "Search Zip Code"
-            .col-md-4
+            .col-md-3
               = select_tag "subject", options_for_select( subjects ),  class: "form-control"
-            .col-md-4
+            .col-md-3
               = number_field_tag "rating", nil, min: 0, max: 10,  class: "form-control", placeholder: "Lowest rating in search"
+            .col-md-3
+              = select_tag "availibility", options_for_select( days_of_week ), class: "form-control", placeholder: "Lowest rating in search", multiple: true
           %br
           = submit_tag "Search", class: "btn btn-success"
       %br
@@ -32,8 +34,14 @@
             = "(#{tutor.average_rating}/10)"
           %p= "Subject: #{tutor.subject}"
           %p= "Languages: English, Spanish"
+          %p
+            Availibity:
+            - tutor.availibility.each do |a|
+              = a
           %p= tutor.email
           %p= "Zip code: #{tutor.zipcode}"
-          = link_to "Leave review", new_review_path(tutor_id: tutor.id), class: "btn btn-warning btn-sm"
-          = link_to "Reviews", reviews_path(tutor_id: tutor.id), class: "btn btn-primary btn-sm"
-          = link_to "Message", message_path(current_user.id, tutor_id: tutor.id), class: "btn btn-success btn-sm"
+          .links
+            = link_to "Reviews", reviews_path(tutor_id: tutor.id), class: "btn btn-primary btn-sm"
+            = link_to "Message", message_path(current_user.id, tutor_id: tutor.id), class: "btn btn-success btn-sm"
+
+          .full-width= link_to "Leave review", new_review_path(tutor_id: tutor.id), class: "btn btn-warning btn-sm"

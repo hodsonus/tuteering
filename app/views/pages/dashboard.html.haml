@@ -1,41 +1,28 @@
-.container
-  / Jumbotron
-  .jumbotron
-    %h1 Marketing stuff!
-    %p.lead Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.
-    %p
-      %a.btn.btn-lg.btn-success{:href => "#", :role => "button"} Get started today
-  / Example row of columns
-  .row
-    .col-lg-4
-      %h2 Heading
-      %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      %p
-        %a.btn.btn-primary{:href => "#", :role => "button"} View details »
-    .col-lg-4
-      %h2 Heading
-      %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      %p
-        %a.btn.btn-primary{:href => "#", :role => "button"} View details »
-    .col-lg-4
-      %h2 Heading
-      %p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
-      %p
-        %a.btn.btn-primary{:href => "#", :role => "button"} View details »
-/ Site footer
-%footer.footer
-  %p © Company 2017
--# / /container
--# /
--# -# Bootstrap core JavaScript
--# -# \==================================================
--# -# / Placed at the end of the document so the pages load faster
--# -# %script{:crossorigin => "anonymous", :integrity => "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", :src => "https://code.jquery.com/jquery-3.2.1.slim.min.js"}
--# -# :javascript
--# -# window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')
--# -# %script{:src => "../../../../assets/js/vendor/popper.min.js"}
--# -# %script{:src => "../../../../dist/js/bootstrap.min.js"}
--# -# %html
--# -# %p
--# -# \~
-
+!!!
+%html{:lang => "en"}
+  %head
+    %title Tuteering - Parent Dashboard
+  .container.dash
+    %main{:role => "main"}
+      / Jumbotron
+      .jumbotron
+        .row
+          .col-lg-6
+            %h2 Activity
+            .activity
+              %h3 Tutoring
+              %p.detail Jimmmy has a tutoring date with Walter White coming up.
+              %p.detail Sarah has a new match with Barukh.
+              %p.detail Sammy has a new match with .
+            %P
+          .col-lg-6
+            %p
+            .card{:style => "width: 100;"}
+              %h1 Profile
+              - if current_user.filepicker_url.present?
+                .image= filestack_image current_user.filepicker_url
+              - else
+                .image= image_tag "profile.jpg", class: "example-img"
+              .card-body
+                %h4.card-title= current_user.full_name
+                %p.card-text= current_user.bio

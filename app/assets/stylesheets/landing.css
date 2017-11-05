@@ -33,8 +33,11 @@ body#home {
 
 body#home {
   color: #fff;
-  text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+}
+
+body#home .center{
+  text-align: center;
 }
 
 

@@ -1,10 +1,12 @@
+.sign_up_forms
+  = image_tag "whirlpool.png"
 .container
   .sign_in
-    .panel.panel-primary
+    .panel.panel-primary.special
       .panel-heading
         %h2 Sign up
       .panel-body
-        - if params[:type] == "tutor"
+        - if params[:type] == "Tutor"
           = render "tutor_form"
         - else
           = render "parent_form"

@@ -10,17 +10,20 @@ class UsersController < ApplicationController
     [ ["Select a subject", ""], "Math", "Science", "Reading", "Spelling"]
   end
 
+  expose :days_of_week do
+    { "Select availibility"=> "", Monday: "M", Teusday: "T", Wednesday: "W", Thursday: "R", Friday: "F", Saturday: "S", Sunday: "Sn"}
+  end
+
   def create
     user = User.new( user_params )
+    require 'pry'; binding.pry;
 
     if user.save
       if current_user.present?
         redirect_to child_path(user.id)
       else
-        sign_in(user)
-        redirect_to dashboard_path
+        redirect_to root_path
       end
-
     else
       redirect_to new_user_path( type: "tutor" )
     end
@@ -51,7 +54,7 @@ class UsersController < ApplicationController
       :filepicker_url,
       :comments,
       :learning_style,
-      languages: []
+      availibility: []
     )
   end
 end

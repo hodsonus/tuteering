@@ -1,4 +1,8 @@
 class TutorsController < ApplicationController
+  expose :days_of_week do
+    { "Select availibility"=> "", Monday: "M", Teusday: "T", Wednesday: "W", Thursday: "R", Friday: "F", Saturday: "S", Sunday: "Sn"}
+  end
+
   expose :tutor_list do
     tutors = User.where(kind: "Tutor")
 
@@ -17,7 +21,35 @@ class TutorsController < ApplicationController
       end
 
     end
-    if results.present?
+
+    if params[:availibility].present?
+      final = []
+
+      if results.present?
+        results.each do |tutor|
+          tutor.availibility.each do |day|
+            final << tutor if final.include?(day)
+            break
+          end
+        end
+      else
+        tutors.each do |tutor|
+          tutor.availibility.each do |day|
+            if params[:availibility].include?(day)
+              final << tutor
+              break
+            end
+          end
+        end
+      end
+
+    end
+
+    if final.present? && results.present?
+      final
+    elsif final.present?
+      final
+    elsif results.present?
       results
     else
       tutors

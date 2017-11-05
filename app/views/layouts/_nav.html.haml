@@ -1,19 +1,30 @@
 .container
   %header.something
-    %h3.text-muted Tuteering
+    %h3.text-muted= image_tag "whirlpool.png"
     %nav.navbar.navbar-expand-md.navbar-light.bg-light.rounded.mb-3
       %button.navbar-toggler{"aria-controls" => "navbarCollapse", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarCollapse", "data-toggle" => "collapse", :type => "button"}
         %span.navbar-toggler-icon
       #navbarCollapse.collapse.navbar-collapse
         %ul.navbar-nav.text-md-center.nav-justified.w-100
-          %li.nav-item.active
-            = link_to "Home", dashboard_path, class: "nav-link"
+          %li.nav-item{ class: params[:action] == "dashboard" ? "active" : ""}
+            = link_to dashboard_path, class: "nav-link" do
+              %i.glyphicon.glyphicon-home
+              Home
             %span.sr-only (current)
+          %li.nav-item{ class: params[:controller] == "tutors" ? "active" : ""}
+            = link_to tutors_path, class: "nav-link" do
+              %i.glyphicon.glyphicon-pencil
+              Tutors
+          %li.nav-item{ class: params[:controller] == "childs" ? "active" : ""}
+            = link_to  childs_path, class: "nav-link" do
+              %i.glyphicon.glyphicon-user
+              Family
+
+          %li.nav-item{ class: params[:controller] == "messages" ? "active" : ""}
+            = link_to messages_path, class: "nav-link" do
+              %i.glyphicon.glyphicon-envelope
+              Messages
           %li.nav-item
-            = link_to "Find a Tutor", tutors_path, class: "nav-link"
-          %li.nav-item
-            = link_to "Children Profile", childs_path, class: "nav-link"
-          %li.nav-item
-            = link_to "Messages", messages_path, class: "nav-link"
-          %li.nav-item
-            = link_to "Sign Out", sign_out_path, method: :delete, class: "nav-link"
+            = link_to sign_out_path, method: :delete, class: "nav-link" do
+              %i.glyphicon.glyphicon-log-out
+              Sign Out

@@ -1,8 +1,20 @@
 .container
   - if current_user.children.present?
-    - current_user.children.each do |child|
-      = link_to child.full_name, child_path(child.id)
-      = child.comments.html_safe
+    .tutors
+      - current_user.children.each do |child|
+        .tutor
+          - if child.filepicker_url.present?
+            = filestack_image( tutor.filepicker_url)
+          - else
+            = image_tag "default.jpg", class: "tutor_image"
+          %p= child.full_name
+          %p= "Learning Style: #{child.learning_style}"
+          %p= child.email
+          .links
+      .tutor
+        = link_to new_child_path do
+          .holder
+            %i.glyphicon.glyphicon-plus
   - else
     %h4
       Looks like you have no children signed up, add them!

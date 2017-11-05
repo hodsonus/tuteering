@@ -55,4 +55,16 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def messages_from
+    messages = Message.where(parent_id: id)
+    user_ids = []
+
+    messages.each do |message|
+      user_ids << message.tutor_id
+    end
+
+    user_ids = user_ids.uniq
+    User.where(id: user_ids)
+  end
 end

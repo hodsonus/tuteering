@@ -41,9 +41,13 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  text-align: center;
-  background-color: transparent;
+  background-color: #fff;
 }
+
+.jumbotrion{
+  background-color: #fff !important;
+}
+
 .jumbotron .btn {
   padding: 14px 24px;
   font-size: 21px;
@@ -93,7 +97,6 @@ body, html {
 
 .tutor_image{
   width: 150px;
-  margin-left: 6vw;
 }
 
 .tutors{
@@ -111,20 +114,36 @@ body, html {
 }
 
 .tutor {
-  width: 33%;
+  text-align: center;
+  width: 25%;
   border: 1px solid #efefef;
   padding: 1em;
 }
 
 .tutor p{
-  width: 80%;
-  margin: 0 auto;
+  /* width: 80%; */
+  font-size: 12px;
+  margin: 0 0 0 53px;
   text-align: left;
 }
 
+.tutor img{
+  margin-bottom: 15px;
+}
+
+.tutor .links{
+  text-align: center;
+}
+
 .tutor a{
+  width: 98%;
+  margin: 10px 0 0 4px;
+}
+
+.tutor .links a{
   float: right;
-  margin-left: 10px;
+  margin-left: 5px;
+  width: 48%;
 }
 
 .reviews{
@@ -185,4 +204,126 @@ body, html {
 .active.home{
   position: relative;
   top: 1.2em;
+}
+
+.card .image{
+  width: 40%;
+  margin: 0 auto;
+}
+
+.example-img{
+  width: 100%;
+}
+
+.jumbotron{
+  background-color: transparent !important;
+}
+
+select.form-control{
+  height: 35px !important;
+}
+
+.holder{
+  position: relative;
+  top: 55px;
+}
+
+.glyphicon-plus{
+  color: #f76b20;
+  position: absolute;
+  font-size: 55px;
+}
+
+.text-muted img{
+  width: 12.5%;
+  height: 5%;
+}
+
+html{
+  overflow: scroll;
+  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
+
+.modal label{
+  color: #000;
+  text-align: left;
+}
+
+.modal input[type="submit"]{
+  color: #fff !important;
+}
+
+.modal h4{
+  color: #000;
+  text-shadow: none;
+}
+
+.activity{
+  text-align: left !important;
+  padding: 10px;
+  height: 500px;
+  overflow-y: scroll;
+  border: 1px solid #efefef;
+}
+
+.col-lg-6 h3{
+  text-decoration: underline;
+  text-align: left;
+}
+
+.user{
+  text-align: left;
+  border-bottom: 1px solid #efefef;
+}
+
+h2.cover-heading{
+  font-weight: bold;
+}
+
+p.lead{
+  font-size: 16px;
+}
+
+.center img{
+  width: 100%;
+}
+
+.cover-container{
+  width: 40%;
+}
+
+.inner{
+  padding: 2em;
+}
+
+.home-mast{
+  width: 39%;
+}
+
+.panel-primary.special{
+  margin: 0 auto;
+  width: 55% !important;
+}
+
+.panel-primary.special .panel-heading{
+  background-image: url("whirlpool.png") !important;
+}
+
+
+.sign_up_forms{
+  padding-top: 1em;
+  width: 10%;
+  margin: 0 auto;
+}
+
+.sign_up_forms img{
+  width: 100%;
+}
+
+body#special-body{
+  background-image: url("cloud.jpg")
 }

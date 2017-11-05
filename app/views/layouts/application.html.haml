@@ -8,13 +8,20 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
+    %link{href: "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", rel: "stylesheet"}
     %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css", :integrity => "sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp", :rel => "stylesheet"}/
+    / Latest compiled and minified JavaScript
     %script{:src => "//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"}
-    %link{:href => "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css", :rel => "stylesheet"}
+    %link{:href => "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css", :rel => "stylesheet"}/
 
 
 
 
   = render "layouts/nav" if current_user.present?
-  %body
-    = yield
+  - if params[:action] == "new" && params[:controller] == "users"
+    %body#special-body
+      = yield
+  - else
+    %body
+      = yield
+  = render "layouts/footer" if current_user.present?

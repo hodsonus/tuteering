@@ -1,7 +1,7 @@
 .container
   .panel.panel-success
     .panel-heading
-      %h4 Create child profile
+      %h4 Add Child to Family
     .panel-body
       = form_for new_child do |f|
         = f.hidden_field :parent_id, value: current_user.id
