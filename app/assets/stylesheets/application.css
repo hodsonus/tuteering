@@ -327,3 +327,16 @@ p.lead{
 body#special-body{
   background-image: url("cloud.jpg")
 }
+
+.messages .from{
+  border-bottom: 1px solid #efefef;
+  padding: 10px 0;
+}
+
+.messages .body{
+  margin-top: 15px;
+}
+
+.messages form{
+  margin-top: 1em;
+}
